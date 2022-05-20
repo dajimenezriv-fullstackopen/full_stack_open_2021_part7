@@ -47,3 +47,9 @@ const { reset: resetInfo, ...info } = useField('text');
 ## Part c) More about styles
 
 React Bootstrap, Material UI and some other UI frameworks.
+
+## Part d) Webpack
+
+Teaches how webpack works and how it's everything build inside the build directory.
+
+## Part f) Exercise implementing Redux, custom hooks and React Router
