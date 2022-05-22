@@ -5,6 +5,7 @@ import LoginForm from 'components/LoginForm';
 import NewBlogForm from 'components/NewBlogForm';
 import { logout } from 'reducers/userReducer';
 import { useDispatch, useSelector } from 'react-redux';
+import Typography from '@mui/material/Typography';
 
 function Blogs() {
   const dispatch = useDispatch();
@@ -15,16 +16,14 @@ function Blogs() {
     (user)
       ? (
         <div>
-          <h2>
+          <Typography variant="h2">
             <Link to="/">Blogs</Link>
-          </h2>
+          </Typography>
 
-          <form>
-            <p>
-              {`${user.username} logged in`}
-              <button type="button" onClick={() => dispatch(logout())}>logout</button>
-            </p>
-          </form>
+          <div>
+            {`${user.username} logged in`}
+            <button type="button" onClick={() => dispatch(logout())}>logout</button>
+          </div>
 
           <NewBlogForm />
 

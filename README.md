@@ -52,4 +52,4 @@ React Bootstrap, Material UI and some other UI frameworks.
 
 Teaches how webpack works and how it's everything build inside the build directory.
 
-## Part f) Exercise implementing Redux, custom hooks and React Router
+## Part f) Exercise implementing Redux, Custom Hooks, React Router and Material UI

@@ -4,6 +4,13 @@ import React, { useState } from 'react';
 import useField from 'hooks';
 import { createBlog } from 'reducers/blogReducer';
 import { useDispatch } from 'react-redux';
+import {
+  Button,
+  TextField,
+  ButtonGroup,
+} from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 export default function NewBlogForm() {
   const [visible, setVisible] = useState(false);
@@ -31,51 +38,47 @@ export default function NewBlogForm() {
       ? (
         <div className="NewBlogForm">
           <h2>create new</h2>
+
           <form>
-            <div>
-              title:
-              <input {...title} />
-            </div>
+            <TextField
+              label="Title"
+              {...title}
+            />
 
-            <div>
-              author:
-              <input {...author} />
-            </div>
+            <TextField
+              label="Author"
+              {...author}
+            />
 
-            <div>
-              url:
-              <input {...url} />
-            </div>
+            <TextField
+              label="Url"
+              {...url}
+            />
 
-            <button
-              type="button"
-              id="create_button"
-              onClick={handleCreateBlog}
-            >
-              create
-            </button>
-            <div>
-              <button
-                type="button"
-                id="create_button"
+            <ButtonGroup>
+              <Button
+                startIcon={<EditIcon />}
+                onClick={handleCreateBlog}
+              >
+                Create
+              </Button>
+              <Button
+                startIcon={<CancelIcon />}
                 onClick={() => setVisible(false)}
               >
-                cancel
-              </button>
-            </div>
+                Cancel
+              </Button>
+            </ButtonGroup>
           </form>
         </div>
       )
       : (
-        <div>
-          <button
-            type="button"
-            id="create_button"
-            onClick={() => setVisible(true)}
-          >
-            new blog
-          </button>
-        </div>
+        <Button
+          startIcon={<EditIcon />}
+          onClick={() => setVisible(true)}
+        >
+          New Blog
+        </Button>
       )
   );
 }
